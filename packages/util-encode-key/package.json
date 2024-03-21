@@ -1,0 +1,49 @@
+{
+  "name": "@onflow/util-encode-key",
+  "version": "1.1.0-alpha.3",
+  "description": "Flow JS SDK Util -- Encode Key",
+  "license": "Apache-2.0",
+  "author": "Dapper Labs <dev@dapperlabs.com>",
+  "homepage": "https://onflow.org",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/onflow/flow-js-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/onflow/flow-js-sdk/issues"
+  },
+  "jest": {
+    "transform": {
+      ".js": "jest-esm-transformer"
+    }
+  },
+  "devDependencies": {
+    "@onflow/fcl-bundle": "^1.3.0-alpha.0",
+    "@onflow/types": "^1.1.0-alpha.1",
+    "@types/node": "^18.13.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-jsdoc": "^39.8.0",
+    "jest": "^27.5.1",
+    "jest-esm-transformer": "1.0.0",
+    "typescript": "^4.9.5"
+  },
+  "source": "src/index.js",
+  "main": "dist/util-encode-key.js",
+  "module": "dist/util-encode-key.module.js",
+  "unpkg": "dist/util-encode-key.umd.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "prepublishOnly": "npm test && npm run build",
+    "test": "jest",
+    "build": "npm run lint && fcl-bundle",
+    "build:types": "tsc",
+    "test:watch": "jest --watch",
+    "start": "fcl-bundle --watch",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.18.6",
+    "@onflow/rlp": "^1.1.0-alpha.1",
+    "@onflow/util-invariant": "^1.1.0-alpha.1"
+  }
+}
